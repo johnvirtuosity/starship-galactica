@@ -1,0 +1,18 @@
+
+#wrapper{
+  width: 100%;
+}
+
+#grid{
+    /*width: 90%;*/
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.cell {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #000;
+    display: inline-block;
+}
