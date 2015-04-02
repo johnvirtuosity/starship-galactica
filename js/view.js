@@ -13,12 +13,16 @@ GameView.prototype.renderGrid = function(grid){
   }
 };
 
-GameView.prototype.listenKeyPress = function (controller, callback){
-  $('body').keypress(controller, callback);
+GameView.prototype.listenKeyPress = function (callback){
+  $('body').keypress(callback);
 };
 
-GameView.prototype.renderPlane = function (plane_location) {
-  plane_location.toggleClass('plane');
+GameView.prototype.renderPlane = function (planeLocation) {
+  planeLocation.toggleClass('plane');
+};
+
+GameView.prototype.renderAsteroid = function (asteroidLocation) {
+  asteroidLocation.toggleClass('asteroid');
 };
 
 

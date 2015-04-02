@@ -27,3 +27,23 @@ Game.prototype.endGame = function(){
   alert('OUCH !');
 };
 
+Game.prototype.generateAsteroid = function(){
+  var asteroidRow = this.getRandomNumber(0 , this.grid.height);
+  this.asteroids.push(new Asteroid(asteroidRow, this.grid.width - 1));
+};
+
+Game.prototype.spawnAsteroids = function(){
+  var numberOfAsteroids = this.getRandomNumber(0,10);
+  for(var i = 0; i < numberOfAsteroids ; i++){
+    this.generateAsteroid();
+  }
+};
+
+Game.prototype.getRandomNumber = function(min, max){
+// Returns a random integer between min (included) and max (excluded)
+// Using Math.round() will give you a non-uniform distribution!
+  return Math.floor(Math.random() * (max - min)) + min;
+};
+
+
+

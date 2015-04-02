@@ -1,8 +1,9 @@
-// function Asteroid(){
-//   this.id = 0;
-//   this.cell = 0;
-//   this.row = 0;
-// }
+function Asteroid(row, col){
+  // this.id = 0;
+  this.row = row;
+  this.col = col;
+  this.cell = $('#grid .row:nth-child('+this.row+') .cell:nth-child('+this.col+')');
+}
 
 // Asteroid.prototype.generateAsteroid = function(){
 //   var new_asteroid = new Asteroid();
@@ -17,3 +18,8 @@
 //   asteroid.row = my_row;
 //   return asteroid;
 // };
+
+// function moveAsteroids(){
+//   console.log( 'our asteroids ' + @asteroids );
+
+// }
