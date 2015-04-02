@@ -11,5 +11,5 @@ $(document).ready(function() {
 
   generateAsteroids();
 
-  moveAsteroids();
+  //moveAsteroids();
 });
