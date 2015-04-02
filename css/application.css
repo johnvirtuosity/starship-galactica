@@ -29,13 +29,17 @@ background-image: url(http://i.imgur.com/Zrp6hA6.jpg);
 }
 
 #Asteroid1 img {
-width: 60px;
+  width: 60px;
   height: 60px;
   border: 1px solid #000;
   border-radius: 50px;
--webkit-transform: rotate(180deg);     /* Chrome and other webkit browsers */
+  -webkit-transform: rotate(180deg);     /* Chrome and other webkit browsers */
   -moz-transform: rotate(180deg);        /* FF */
   -o-transform: rotate(180deg);          /* Opera */
   -ms-transform: rotate(180deg);         /* IE9 */
   transform: rotate(180deg);
+}
+
+.plane {
+   background: #000;
 }
