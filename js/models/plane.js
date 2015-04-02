@@ -3,9 +3,9 @@ function Plane(width, height){
   this.position_y = Math.floor(height/2);
 };
 
-Plane.prototype.setPlane = function(){
-  this.getPosition().toggleClass('plane');
-};
+// Plane.prototype.setPlane = function(){
+//   this.getPosition().toggleClass('plane');
+// };
 
 Plane.prototype.getPosition = function(){
   return $('#grid .row:nth-child('+this.position_y+') .cell:nth-child('+this.position_x+')');
@@ -33,6 +33,6 @@ Plane.prototype.outOfBounds = function(grid, next_position){
   }
 };
 
-Plane.prototype.endGame = function(){
-  alert('You lose');
-};
+// Plane.prototype.endGame = function(){
+//   alert('You lose');
+// };
