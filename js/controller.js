@@ -9,7 +9,7 @@ GameController.prototype.updatePlanePosition = function(e){
 
   view.renderPlane(game.plane.getPosition());
   console.log(game.checkCollision(nextPosition));
-  if(game.plane.outOfBounds(game.grid, nextPosition) || game.checkCollision(nextPosition)){
+  if(game.outOfBounds(nextPosition) || game.checkCollision(nextPosition)){
     game.endGame();
   }else{
     game.plane.updatePosition(nextPosition)
