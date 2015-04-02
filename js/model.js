@@ -1,3 +1,4 @@
+
 function Plane(width, height){
   this.position_x = Math.floor(width/2);
   this.position_y = Math.floor(height/2);
@@ -22,3 +23,22 @@ Plane.prototype.getNeighbors = function(){
   var neighbors = [[x + 1, y], [x - 1, y], [x, y - 1], [x, y + 1]] ;
   return neighbors ;
 };
+
+var asteroid = function(){
+  id: 0;
+  cell: 0;
+  row: 0;
+}
+
+var generateAsteroid = function(){
+  //generate an asteroid and return asteroid object
+  new_asteroid = new asteroid();
+  //test assignment
+  var id = new Date();
+  //new_asteroid.id = id.format( "yyyymmddhhmmtttt" );
+  new_asteroid.id = id;
+  return new_asteroid;
+};
+
+//console.log( generateAsteroid() );
+
