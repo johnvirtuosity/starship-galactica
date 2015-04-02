@@ -46,7 +46,8 @@ Game.prototype.checkCollision = function(nextPosition){
 
 
 Game.prototype.endGame = function(){
-  alert('OUCH !');
+  $(".audioDemo").trigger('play');
+  // alert('OUCH !');
 };
 
 Game.prototype.generateAsteroid = function(){
@@ -67,5 +68,7 @@ Game.prototype.getRandomNumber = function(min, max){
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
+Game.prototype.playSound = function() {
 
+};
 
