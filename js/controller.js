@@ -29,5 +29,7 @@ $(document).ready(function() {
   view.renderPlane(game.plane.getPosition());
   view.listenKeyPress(controller.updatePlanePosition);
 
+  game.spawnAsteroids();
+  view.renderAsteroids(game.asteroids);
 
 });

@@ -29,7 +29,7 @@ Game.prototype.endGame = function(){
 
 Game.prototype.generateAsteroid = function(){
   var asteroidRow = this.getRandomNumber(0 , this.grid.height);
-  this.asteroids.push(new Asteroid(asteroidRow, this.grid.width - 1));
+  this.asteroids.push(new Asteroid(asteroidRow, this.grid.width));
 };
 
 Game.prototype.spawnAsteroids = function(){

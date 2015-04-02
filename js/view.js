@@ -21,28 +21,15 @@ GameView.prototype.renderPlane = function (planeLocation) {
   planeLocation.toggleClass('plane');
 };
 
-GameView.prototype.renderAsteroid = function (asteroidLocation) {
-  asteroidLocation.toggleClass('asteroid');
+GameView.prototype.renderAsteroids = function (asteroids) {
+  for(var i = 0 ; i < asteroids.length; i++){
+    this.renderAsteroid(asteroids[i]);
+  }
+};
+
+GameView.prototype.renderAsteroid = function (asteroid) {
+    asteroid.cell.toggleClass('asteroid');
 };
 
 
-
-
-// function placeAsteroid() {
-//     var asteroid = spawnAsteroid();
-//     var cell = 50;
-//     var row = asteroid.row;
-//     // console.log ( $('#grid .row:nth-child(10) .cell:nth-child(10)' ) );
-//     $('#grid .row:nth-child('+row+') .cell:nth-child('+cell+')').addClass('asteroid');
-//     //Line below may belong in placeAsteroids
-//     $asteroids = [];
-//     $asteroids.push asteroid;
-// }
-
-
-// function generateAsteroids() {
-//   for (var i=1 ; i<10 ; i++) {
-//     placeAsteroid();
-//   }
-// }
 
