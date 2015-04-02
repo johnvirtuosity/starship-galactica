@@ -13,8 +13,8 @@ GameView.prototype.renderGrid = function(grid){
   }
 };
 
-GameView.prototype.listenKeyPress = function (updateFunction){
-  $('body').keypress(updateFunction);
+GameView.prototype.listenKeyPress = function (controller, callback){
+  $('body').keypress(controller, callback);
 };
 
 GameView.prototype.renderPlane = function (plane_location) {
@@ -22,34 +22,7 @@ GameView.prototype.renderPlane = function (plane_location) {
 };
 
 
-// function ViewPlane (plane, grid){
-//   this.init = function(){
-//     $('body').keypress(function(e){
-//       var neighbors = plane.getNeighbors();
-//       plane.setPlane();
-//       var next_position = 0
-//       switch(e.keyCode) {
-//       case 104:
-//           next_position =neighbors[1];
-//           break;
-//       case 106:
-//           next_position =neighbors[3];
-//           break;
-//       case 107:
-//           next_position =neighbors[0];
-//           break;
-//       case 117:
-//           next_position =neighbors[2];
-//           break;
-//       if(plane.outOfBounds(grid, next_position)) {
-//         plane.endGame();
-//       } else {
-//         plane.updatePosition(next_position);
-//         plane.setPlane();
-//       }
-//   });
-//   };
-// };
+
 
 // function placeAsteroid() {
 //     var asteroid = spawnAsteroid();
