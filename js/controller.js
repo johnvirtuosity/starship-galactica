@@ -6,4 +6,8 @@ $(document).ready(function() {
 
   var viewPlane = new ViewPlane(game.plane, game.grid);
   viewPlane.init();
+
+  generateAsteroids();
+
+  moveAsteroids();
 });
