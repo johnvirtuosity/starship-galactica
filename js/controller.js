@@ -1,15 +1,34 @@
+function GameController(){
+
+}
+
+GameController.prototype.updatePlanePosition = function(e){
+  var keyCode = e.keyCode;
+  var neighbors = game.plane.getNeighbors();
+  var nextPosition = game.getNextPosition(keyCode, neighbors);
+
+  view.renderPlane(game.plane.getPosition());
+
+  if(game.plane.outOfBounds(game.grid, nextPosition)){
+    view.renderPlane(game.plane.getPosition());
+    game.endGame();
+  }else{
+    game.plane.updatePosition(nextPosition)
+    view.renderPlane(game.plane.getPosition());
+    console.log('you are fine !')
+  }
+}
+
+var game = new Game(50,100);
+var view = new GameView();
+var controller = new GameController();
 
 $(document).ready(function() {
-  var grid = new Grid(25,50);
-  grid.renderGrid();
 
-  var plane = new Plane(grid.width, grid.height);
-  plane.setPlane();
+  view.renderGrid(game.grid);
+  view.renderPlane(game.plane.getPosition());
+  view.listenKeyPress(controller.updatePlanePosition);
 
-  var viewPlane = new ViewPlane(plane, grid);
-  viewPlane.init();
-
-  generateAsteroids();
-
-  //moveAsteroids();
+  game.spawnAsteroids();
+  view.renderAsteroids(game.asteroids);
 });
