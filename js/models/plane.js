@@ -32,7 +32,3 @@ Plane.prototype.outOfBounds = function(grid, next_position){
     return true;
   }
 };
-
-// Plane.prototype.endGame = function(){
-//   alert('You lose');
-// };

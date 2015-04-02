@@ -1,6 +1,6 @@
 function Game(width,height){
  this.grid = new Grid(width,height);
- this.plane = new Plane(this.grid.width, this.grid.height);
+ this.plane = new Plane(width, height);  //refactored this.grid.width => width
  this.asteroids = [];
 };
 
@@ -44,6 +44,24 @@ Game.prototype.getRandomNumber = function(min, max){
 // Using Math.round() will give you a non-uniform distribution!
   return Math.floor(Math.random() * (max - min)) + min;
 };
+
+Game.prototype.animateAsteroid = function(callback) {
+  setInterval(callback, 50);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

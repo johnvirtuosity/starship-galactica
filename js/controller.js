@@ -19,6 +19,19 @@ GameController.prototype.updatePlanePosition = function(e){
   }
 }
 
+GameController.prototype.animateAsteroids = function(){
+
+    for (var i = 0; i < game.asteroids.length; i++)
+        {
+              game.asteroids[i].updatePosition();
+              console.log(game.asteroids[i].cell);
+
+        }
+        game.spawnAsteroids();
+        console.log(game.asteroids);
+        view.renderAsteroids(game.asteroids);
+  };
+
 var game = new Game(50,100);
 var view = new GameView();
 var controller = new GameController();
@@ -33,5 +46,5 @@ $(document).ready(function() {
   view.renderAsteroids(game.asteroids);
 
   // Animate asteroids that are on the board
-
+  game.animateAsteroid(controller.animateAsteroids);
 });
