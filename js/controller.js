@@ -31,7 +31,7 @@ GameController.prototype.animateAsteroids = function(){
         view.renderAsteroids(game.asteroids);
   };
 
-var game = new Game(50,100);
+var game = new Game(20,40);
 var view = new GameView();
 var controller = new GameController();
 
