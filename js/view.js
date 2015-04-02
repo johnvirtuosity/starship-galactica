@@ -40,5 +40,19 @@ Grid.prototype.renderGrid = function() {
   }
 };
 
+function placeAsteroid() {
+    var asteroid = spawnAsteroid();
+    var cell = 50;
+    var row = asteroid.row;
+    // console.log ( $('#grid .row:nth-child(10) .cell:nth-child(10)' ) );
+    $('#grid .row:nth-child('+row+') .cell:nth-child('+cell+')').addClass('asteroid');
+    //Line below may belong in placeAsteroids
+    $asteroids = [];
+    $asteroids.push asteroid;
+}
 
-
+function generateAsteroids() {
+  for (var i=1 ; i<10 ; i++) {
+    placeAsteroid();
+  }
+}
