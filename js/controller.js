@@ -31,4 +31,7 @@ $(document).ready(function() {
 
   game.spawnAsteroids();
   view.renderAsteroids(game.asteroids);
+
+  // Animate asteroids that are on the board
+
 });
