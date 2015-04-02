@@ -24,6 +24,20 @@ Plane.prototype.getNeighbors = function(){
   return neighbors ;
 };
 
+Plane.prototype.outOfBounds = function(grid, next_position){
+  var x = next_position[0];
+  var y = next_position[1];
+  if ((x > 0 && x < grid.width + 1) && (y > 0 && y < grid.height + 1)){
+    return false;
+  } else {
+    return true;
+  }
+};
+
+Plane.prototype.endGame = function(){
+  alert('You lose');
+};
+
 var asteroid = function(){
   id: 0;
   cell: 0;
