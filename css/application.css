@@ -1,5 +1,7 @@
 body {
-  /*background-image: url(http://i.imgur.com/Zrp6hA6.jpg);*/
+
+background-image: url(http://i.imgur.com/Zrp6hA6.jpg);
+
 }
 
 #wrapper{
@@ -8,16 +10,28 @@ body {
 }
 
 #grid{
-    /*width: 90%;*/
+    width: 80%;
+    padding: 0px;
     margin: 0 auto;
     text-align: center;
+    background: rgba(255,255,255,0.8);
+    border-radius: 10px;
+    top: 50px;
+    position: relative;
+}
+
+#explode {
+  width: 100%;
+  height: 100%;
+  background: red;
+
 }
 
 
 .cell {
     width: 30px;
     height: 30px;
-    border: 1px solid #000;
+    /*border: 1px solid #000;*/
     display: inline-block;
 }
 
@@ -41,13 +55,13 @@ body {
 }
 
 .plane {
-   background: #000;
+   background: transparent;
    background-size: cover;
-   background-image: url("http://www.igorstshirts.com/blog/conceptships/2014/john_wallin_liberto/john_wallin_liberto_03.jpg");
+   background-image: url("http://i.imgur.com/77lCzsz.png");
 }
 
 .asteroid {
-   background: red;
+   background: transparent;
    background-size: cover;
-   background-image: url("http://designreviver.com/wp-content/uploads/2008/09/flame1.jpg");
+   background-image: url("http://icons.iconarchive.com/icons/zairaam/bumpy-planets/128/asteroid-icon.png");
 }

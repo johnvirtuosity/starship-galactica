@@ -19,16 +19,8 @@ Plane.prototype.updatePosition = function(direction){
 Plane.prototype.getNeighbors = function(){
   var x = this.position_x ;
   var y = this.position_y ;
-  var neighbors = [[x + 1, y], [x - 1, y], [x, y - 1], [x, y + 1]] ;
+  var neighbors = [[x + 1, y], [x - 1, y], [x, y - 1], [x, y + 1], [x,y]] ;
   return neighbors ;
 };
 
-Plane.prototype.outOfBounds = function(grid, next_position){
-  var x = next_position[0];
-  var y = next_position[1];
-  if ((x > 0 && x < grid.width + 1) && (y > 0 && y < grid.height + 1)){
-    return false;
-  } else {
-    return true;
-  }
-};
+

@@ -19,12 +19,35 @@ Game.prototype.getNextPosition = function(keyCode, positions){
   case 117:
       nextPosition = positions[2];
       break;
+  default:
+      nextPosition = positions[4]; //if the user presses any other key, position stays the same.
   }
   return nextPosition;
 };
 
+Game.prototype.outOfBounds = function(next_position){
+  var x = next_position[0];
+  var y = next_position[1];
+  if ((x > 0 && x < this.grid.width + 1) && (y > 0 && y < this.grid.height + 1)){
+    return false;
+  } else {
+    return true;
+  }
+};
+
+Game.prototype.checkCollision = function(nextPosition){
+   var position = $('#grid .row:nth-child('+nextPosition[1]+') .cell:nth-child('+nextPosition[0]+')');
+   if (position.hasClass('asteroid')){
+    return true;
+   } else {
+    return false;
+   }
+};
+
+
 Game.prototype.endGame = function(){
-  alert('OUCH !');
+  $(".audioDemo").trigger('play');
+  // alert('OUCH !');
 };
 
 Game.prototype.generateAsteroid = function(){
@@ -45,19 +68,10 @@ Game.prototype.getRandomNumber = function(min, max){
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
+
 Game.prototype.animateAsteroid = function(callback) {
   setInterval(callback, 50);
 };
-
-
-
-
-
-
-
-
-
-
 
 
 
