@@ -19,7 +19,7 @@ Plane.prototype.updatePosition = function(direction){
 Plane.prototype.getNeighbors = function(){
   var x = this.position_x ;
   var y = this.position_y ;
-  var neighbors = [[x + 1, y], [x - 1, y], [x, y - 1], [x, y + 1]] ;
+  var neighbors = [[x + 1, y], [x - 1, y], [x, y - 1], [x, y + 1], [x,y]] ;
   return neighbors ;
 };
 
@@ -32,6 +32,8 @@ Plane.prototype.outOfBounds = function(grid, next_position){
     return true;
   }
 };
+
+
 
 // Plane.prototype.endGame = function(){
 //   alert('You lose');

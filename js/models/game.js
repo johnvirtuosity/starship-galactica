@@ -19,9 +19,21 @@ Game.prototype.getNextPosition = function(keyCode, positions){
   case 117:
       nextPosition = positions[2];
       break;
+  default:
+      nextPosition = positions[4]; //if the user presses any other key, position stays the same.
   }
   return nextPosition;
 };
+
+Game.prototype.checkCollision = function(nextPosition){
+   var position = $('#grid .row:nth-child('+nextPosition[1]+') .cell:nth-child('+nextPosition[0]+')');
+   if (position.hasClass('asteroid')){
+    return true;
+   } else {
+    return false;
+   }
+};
+
 
 Game.prototype.endGame = function(){
   alert('OUCH !');

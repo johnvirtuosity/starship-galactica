@@ -8,15 +8,14 @@ GameController.prototype.updatePlanePosition = function(e){
   var nextPosition = game.getNextPosition(keyCode, neighbors);
 
   view.renderPlane(game.plane.getPosition());
-
-  if(game.plane.outOfBounds(game.grid, nextPosition)){
-    view.renderPlane(game.plane.getPosition());
+  console.log(game.checkCollision(nextPosition));
+  if(game.plane.outOfBounds(game.grid, nextPosition) || game.checkCollision(nextPosition)){
     game.endGame();
   }else{
     game.plane.updatePosition(nextPosition)
-    view.renderPlane(game.plane.getPosition());
     console.log('you are fine !')
   }
+  view.renderPlane(game.plane.getPosition());
 }
 
 var game = new Game(50,100);
