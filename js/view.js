@@ -1,7 +1,10 @@
-
 function Grid (height, width) {
   this.width = width;
   this.height = height;
+}
+
+function ViewPlane (){
+
 }
 
 Grid.prototype.renderGrid = function() {
