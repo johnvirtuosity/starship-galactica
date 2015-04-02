@@ -25,6 +25,16 @@ Game.prototype.getNextPosition = function(keyCode, positions){
   return nextPosition;
 };
 
+Game.prototype.outOfBounds = function(next_position){
+  var x = next_position[0];
+  var y = next_position[1];
+  if ((x > 0 && x < this.grid.width + 1) && (y > 0 && y < this.grid.height + 1)){
+    return false;
+  } else {
+    return true;
+  }
+};
+
 Game.prototype.checkCollision = function(nextPosition){
    var position = $('#grid .row:nth-child('+nextPosition[1]+') .cell:nth-child('+nextPosition[0]+')');
    if (position.hasClass('asteroid')){
