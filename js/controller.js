@@ -1,8 +1,11 @@
 
 $(document).ready(function() {
   var grid = new Grid(50,100);
-  var plane = new Plane();
   grid.renderGrid();
-  plane.setPlane(grid.width, grid.height);
 
+  var plane = new Plane(grid.width, grid.height);
+  plane.setPlane();
+
+  var viewPlane = new ViewPlane(plane);
+  viewPlane.init();
 });
