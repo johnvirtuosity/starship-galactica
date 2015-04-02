@@ -1,5 +1,5 @@
 body {
-background-image: url(http://i.imgur.com/Zrp6hA6.jpg);
+/*background-image: url(http://i.imgur.com/Zrp6hA6.jpg);*/
 }
 
 #wrapper{
@@ -47,7 +47,7 @@ background-image: url(http://i.imgur.com/Zrp6hA6.jpg);
 }
 
 .asteroid {
-   background: #000;
+   background: red;
    background-size: cover;
    background-image: url("http://designreviver.com/wp-content/uploads/2008/09/flame1.jpg");
 }
