@@ -1,11 +1,9 @@
 
 $(document).ready(function() {
-  var grid = new Grid(50,100);
-  grid.renderGrid();
+  game = new Game(50,100);
+  game.grid.renderGrid();
+  game.plane.setPlane();
 
-  var plane = new Plane(grid.width, grid.height);
-  plane.setPlane();
-
-  var viewPlane = new ViewPlane(plane, grid);
+  var viewPlane = new ViewPlane(game.plane, game.grid);
   viewPlane.init();
 });
