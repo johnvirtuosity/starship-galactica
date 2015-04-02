@@ -1,5 +1,3 @@
-
-
 function ViewPlane (plane, grid){
   this.init = function(){
     $('body').keypress(function(e){
@@ -28,9 +26,9 @@ function ViewPlane (plane, grid){
         plane.updatePosition(next_position);
         plane.setPlane();
       }
-    });
-  }
-}
+  });
+  };
+};
 
 
 
