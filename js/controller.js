@@ -6,6 +6,6 @@ $(document).ready(function() {
   var plane = new Plane(grid.width, grid.height);
   plane.setPlane();
 
-  var viewPlane = new ViewPlane(plane);
+  var viewPlane = new ViewPlane(plane, grid);
   viewPlane.init();
 });

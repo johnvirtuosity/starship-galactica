@@ -3,28 +3,34 @@ function Grid (height, width) {
   this.height = height;
 }
 
-function ViewPlane (plane){
+function ViewPlane (plane, grid){
   this.init = function(){
     $('body').keypress(function(e){
       var neighbors = plane.getNeighbors();
       plane.setPlane();
+      var next_position = 0
       switch(e.keyCode) {
       case 104:
-          plane.updatePosition(neighbors[1]);
+          next_position =neighbors[1];
           break;
       case 106:
-          plane.updatePosition(neighbors[3]);
+          next_position =neighbors[3];
           break;
       case 107:
-          plane.updatePosition(neighbors[0]);
+          next_position =neighbors[0];
           break;
       case 117:
-          plane.updatePosition(neighbors[2]);
+          next_position =neighbors[2];
           break;
       default:
 
       }
-      plane.setPlane();
+      if(plane.outOfBounds(grid, next_position)) {
+        plane.endGame();
+      } else {
+        plane.updatePosition(next_position);
+        plane.setPlane();
+      }
     });
   }
 }
