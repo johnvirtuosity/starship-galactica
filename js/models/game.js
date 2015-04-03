@@ -51,12 +51,12 @@ Game.prototype.endGame = function(){
 };
 
 Game.prototype.generateAsteroid = function(){
-  var asteroidRow = this.getRandomNumber(0 , this.grid.height);
+  var asteroidRow = this.getRandomNumber(0 , this.grid.height + 1);
   this.asteroids.push(new Asteroid(asteroidRow, this.grid.width));
 };
 
 Game.prototype.spawnAsteroids = function(){
-  var numberOfAsteroids = this.getRandomNumber(0,10);
+  var numberOfAsteroids = this.getRandomNumber(0,5);
   for(var i = 0; i < numberOfAsteroids ; i++){
     this.generateAsteroid();
   }
@@ -76,7 +76,7 @@ Game.prototype.getRandomNumber = function(min, max){
 
 
 Game.prototype.animateAsteroid = function(callback) {
-  setInterval(callback, 50);
+  setInterval(callback, 200);
 };
 
 
