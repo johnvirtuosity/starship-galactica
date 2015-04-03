@@ -23,15 +23,13 @@ var game = new Game(20,40);
 
 GameController.prototype.animateAsteroids = function(){
 
-    for (var i = 0; i < game.asteroids.length; i++)
-        {
-              game.asteroids[i].updatePosition();
-              console.log(game.asteroids[i].cell);
-
-        }
-        game.spawnAsteroids();
-        console.log(game.asteroids);
-        view.renderAsteroids(game.asteroids);
+    for (var i = 0; i < game.asteroids.length; i++){
+      game.asteroids[i].updatePosition();
+      console.log(game.asteroids[i].cell);
+    }
+    game.destroyAsteroids();
+    game.spawnAsteroids();
+    view.renderAsteroids(game.asteroids);
   };
 
 

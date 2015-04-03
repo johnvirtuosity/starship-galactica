@@ -1,6 +1,6 @@
 function Game(width,height){
  this.grid = new Grid(width,height);
- this.plane = new Plane(width, height);  //refactored this.grid.width => width
+ this.plane = new Plane(this.grid.width, this.grid.height);
  this.asteroids = [];
 };
 
@@ -56,15 +56,21 @@ Game.prototype.endGame = function(){
 };
 
 Game.prototype.generateAsteroid = function(){
-  var asteroidRow = this.getRandomNumber(0 , this.grid.height);
+  var asteroidRow = this.getRandomNumber(0 , this.grid.height + 1);
   this.asteroids.push(new Asteroid(asteroidRow, this.grid.width));
 };
 
 Game.prototype.spawnAsteroids = function(){
-  var numberOfAsteroids = this.getRandomNumber(0,10);
+  var numberOfAsteroids = this.getRandomNumber(0,5);
   for(var i = 0; i < numberOfAsteroids ; i++){
     this.generateAsteroid();
   }
+};
+
+Game.prototype.destroyAsteroids = function(){
+    while(this.asteroids[0].col < 0){
+      this.asteroids.splice(0,1)
+    }
 };
 
 Game.prototype.getRandomNumber = function(min, max){
@@ -75,7 +81,7 @@ Game.prototype.getRandomNumber = function(min, max){
 
 
 Game.prototype.animateAsteroid = function(callback) {
-  setInterval(callback, 50);
+  setInterval(callback, 200);
 };
 
 
