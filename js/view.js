@@ -41,6 +41,9 @@ GameView.prototype.renderAsteroids = function (asteroids) {
 
 GameView.prototype.renderAsteroid = function (asteroid) {
     asteroid.cell().addClass('asteroid');
+    if (asteroid.cell().hasClass('plane')){
+      game.endGame();
+    }
   };
 
 

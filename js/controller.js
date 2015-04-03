@@ -37,18 +37,31 @@ GameController.prototype.animateAsteroids = function(){
     setTimeout(controller.animateAsteroids, game.speed);
   };
 
+GameController.prototype.startGame = function(e){
+  var keyCode = e.keyCode;
+  if (keyCode == 32){
+    console.log('key pressed was space-bar: ' +( keyCode == 32)) ;
+    return (keyCode == 32);
+  }
+};
 
 var view = new GameView();
 var controller = new GameController();
 
 $(document).ready(function() {
 
-  view.renderGrid(game.grid);
-  view.renderPlane(game.plane.getPosition());
-  view.listenKeyPress(controller.updatePlanePosition);
-  game.spawnAsteroids();
-  view.renderAsteroids(game.asteroids);
+  $(window).keypress(function(e) {
+    if (e.keyCode == 32) {
 
-  // Animate asteroids that are on the board
-  game.animateAsteroid(controller.animateAsteroids);
+    view.renderGrid(game.grid);
+    view.renderPlane(game.plane.getPosition());
+    view.listenKeyPress(controller.updatePlanePosition);
+
+    game.spawnAsteroids();
+    view.renderAsteroids(game.asteroids);
+
+    game.animateAsteroid(controller.animateAsteroids);
+    }
+  });
+
 });

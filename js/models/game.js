@@ -87,7 +87,6 @@ Game.prototype.getRandomNumber = function(min, max){
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
-
 Game.prototype.animateAsteroid = function(callback) {
   // setInterval(callback, 200);
   setTimeout(callback, this.speed);
@@ -105,10 +104,6 @@ Game.prototype.setLevels = function(){
   }
 
 };
-
-
-
-
 
 
 
