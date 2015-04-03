@@ -36,7 +36,14 @@ Game.prototype.checkCollision = function(nextPosition){
 
 
 Game.prototype.endGame = function(){
-  alert('OUCH !');
+  // alert('OUCH !');
+  //clear the screen
+  $('body').empty();
+  $('body').css({
+    'background-image': 'url(http://www.psdgraphics.com/file/explosion-in-space.jpg)'
+  })
+  $('body').append('<div id="explode">GAME OVER</div>');
+  //create the div 'explode' and fill it with the words 'GAME OVER'
 };
 
 Game.prototype.generateAsteroid = function(){

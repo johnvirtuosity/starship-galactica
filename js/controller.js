@@ -18,7 +18,7 @@ GameController.prototype.updatePlanePosition = function(e){
   view.renderPlane(game.plane.getPosition());
 }
 
-var game = new Game(50,100);
+var game = new Game(15,30);
 var view = new GameView();
 var controller = new GameController();
 
