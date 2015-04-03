@@ -1,7 +1,9 @@
 body {
 
 background-image: url(http://i.imgur.com/Zrp6hA6.jpg);
-background-size:cover;
+
+background-size: cover;
+
 }
 
 #wrapper{
@@ -23,8 +25,11 @@ background-size:cover;
 #explode {
   width: 100%;
   height: 100%;
-  background: red;
-
+  text-align: center;
+  color: white;
+  font-size: 10em;
+  font-family: Helvetica, sans-serif;
+  margin-top: 100px;
 }
 
 
