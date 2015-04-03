@@ -1,6 +1,6 @@
 function Game(width,height){
  this.grid = new Grid(width,height);
- this.plane = new Plane(this.grid.width, this.grid.height);
+ this.plane = new Plane(width, height);  //refactored this.grid.width => width
  this.asteroids = [];
 };
 
@@ -25,6 +25,16 @@ Game.prototype.getNextPosition = function(keyCode, positions){
   return nextPosition;
 };
 
+Game.prototype.outOfBounds = function(next_position){
+  var x = next_position[0];
+  var y = next_position[1];
+  if ((x > 0 && x < this.grid.width + 1) && (y > 0 && y < this.grid.height + 1)){
+    return false;
+  } else {
+    return true;
+  }
+};
+
 Game.prototype.checkCollision = function(nextPosition){
    var position = $('#grid .row:nth-child('+nextPosition[1]+') .cell:nth-child('+nextPosition[0]+')');
    if (position.hasClass('asteroid')){
@@ -36,14 +46,13 @@ Game.prototype.checkCollision = function(nextPosition){
 
 
 Game.prototype.endGame = function(){
-  // alert('OUCH !');
   //clear the screen
+  $(".audioDemo").trigger('play');
   $('body').empty();
   $('body').css({
     'background-image': 'url(http://www.psdgraphics.com/file/explosion-in-space.jpg)'
   })
   $('body').append('<div id="explode">GAME OVER</div>');
-  //create the div 'explode' and fill it with the words 'GAME OVER'
 };
 
 Game.prototype.generateAsteroid = function(){
@@ -63,6 +72,15 @@ Game.prototype.getRandomNumber = function(min, max){
 // Using Math.round() will give you a non-uniform distribution!
   return Math.floor(Math.random() * (max - min)) + min;
 };
+
+
+Game.prototype.animateAsteroid = function(callback) {
+  setInterval(callback, 50);
+};
+
+
+
+
 
 
 

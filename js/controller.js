@@ -9,7 +9,7 @@ GameController.prototype.updatePlanePosition = function(e){
 
   view.renderPlane(game.plane.getPosition());
   console.log(game.checkCollision(nextPosition));
-  if(game.plane.outOfBounds(game.grid, nextPosition) || game.checkCollision(nextPosition)){
+  if(game.outOfBounds(nextPosition) || game.checkCollision(nextPosition)){
     game.endGame();
   }else{
     game.plane.updatePosition(nextPosition)
@@ -18,7 +18,23 @@ GameController.prototype.updatePlanePosition = function(e){
   view.renderPlane(game.plane.getPosition());
 }
 
-var game = new Game(15,30);
+
+var game = new Game(20,40);
+
+GameController.prototype.animateAsteroids = function(){
+
+    for (var i = 0; i < game.asteroids.length; i++)
+        {
+              game.asteroids[i].updatePosition();
+              console.log(game.asteroids[i].cell);
+
+        }
+        game.spawnAsteroids();
+        console.log(game.asteroids);
+        view.renderAsteroids(game.asteroids);
+  };
+
+
 var view = new GameView();
 var controller = new GameController();
 
@@ -31,4 +47,6 @@ $(document).ready(function() {
   game.spawnAsteroids();
   view.renderAsteroids(game.asteroids);
 
+  // Animate asteroids that are on the board
+  game.animateAsteroid(controller.animateAsteroids);
 });
