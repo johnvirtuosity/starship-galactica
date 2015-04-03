@@ -18,6 +18,9 @@ GameController.prototype.updatePlanePosition = function(e){
   view.renderPlane(game.plane.getPosition());
 }
 
+
+var game = new Game(20,40);
+
 GameController.prototype.animateAsteroids = function(){
 
     for (var i = 0; i < game.asteroids.length; i++)
@@ -31,7 +34,7 @@ GameController.prototype.animateAsteroids = function(){
         view.renderAsteroids(game.asteroids);
   };
 
-var game = new Game(20,40);
+
 var view = new GameView();
 var controller = new GameController();
 

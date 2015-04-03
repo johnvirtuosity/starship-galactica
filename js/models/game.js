@@ -46,8 +46,13 @@ Game.prototype.checkCollision = function(nextPosition){
 
 
 Game.prototype.endGame = function(){
+  //clear the screen
   $(".audioDemo").trigger('play');
-  // alert('OUCH !');
+  $('body').empty();
+  $('body').css({
+    'background-image': 'url(http://www.psdgraphics.com/file/explosion-in-space.jpg)'
+  })
+  $('body').append('<div id="explode">GAME OVER</div>');
 };
 
 Game.prototype.generateAsteroid = function(){
