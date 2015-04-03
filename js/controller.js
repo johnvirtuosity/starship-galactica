@@ -23,13 +23,18 @@ var game = new Game(20,40);
 
 GameController.prototype.animateAsteroids = function(){
 
+    game.setLevels();
+
     for (var i = 0; i < game.asteroids.length; i++){
       game.asteroids[i].updatePosition();
-      console.log(game.asteroids[i].cell);
     }
+
     game.destroyAsteroids();
-    game.spawnAsteroids();
+    game.spawnAsteroids(game.level); //you need to spwan a certain number of asteroids
+
     view.renderAsteroids(game.asteroids);
+
+    setTimeout(controller.animateAsteroids, game.speed);
   };
 
 GameController.prototype.startGame = function(e){
@@ -45,10 +50,8 @@ var controller = new GameController();
 
 $(document).ready(function() {
 
-  // JK MY BAD...WORKS BUT ....
-  //if ( view.listenKeyPress(controller.startGame) == true){
   $(window).keypress(function(e) {
-    if (e.keyCode == 0 || e.keyCode == 32) {
+    if (e.keyCode == 32) {
 
     view.renderGrid(game.grid);
     view.renderPlane(game.plane.getPosition());
@@ -60,4 +63,5 @@ $(document).ready(function() {
     game.animateAsteroid(controller.animateAsteroids);
     }
   });
+
 });
