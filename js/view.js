@@ -33,14 +33,15 @@ GameView.prototype.renderPlane = function (planeLocation) {
 };
 
 GameView.prototype.renderAsteroids = function (asteroids) {
+  $('.asteroid').removeClass('asteroid');
   for(var i = 0 ; i < asteroids.length; i++){
     this.renderAsteroid(asteroids[i]);
   }
 };
 
 GameView.prototype.renderAsteroid = function (asteroid) {
-    asteroid.cell.toggleClass('asteroid');
-};
+    asteroid.cell().addClass('asteroid');
+  };
 
 
 

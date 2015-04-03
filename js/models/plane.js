@@ -24,8 +24,3 @@ Plane.prototype.getNeighbors = function(){
 };
 
 
-
-
-// Plane.prototype.endGame = function(){
-//   alert('You lose');
-// };
