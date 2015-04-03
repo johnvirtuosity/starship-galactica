@@ -6,6 +6,15 @@ background-size: cover;
 
 }
 
+#start-game {
+  width: 100%;
+  color: white;
+  font-size: 8em;
+  font-family: Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
+
 #wrapper{
   width: 100%;
 

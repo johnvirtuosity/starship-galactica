@@ -40,7 +40,6 @@ GameController.prototype.animateAsteroids = function(){
 GameController.prototype.startGame = function(e){
   var keyCode = e.keyCode;
   if (keyCode == 32){
-    console.log('key pressed was space-bar: ' +( keyCode == 32)) ;
     return (keyCode == 32);
   }
 };
@@ -52,7 +51,7 @@ $(document).ready(function() {
 
   $(window).keypress(function(e) {
     if (e.keyCode == 32) {
-
+    $('#start-game').css('display','none');
     view.renderGrid(game.grid);
     view.renderPlane(game.plane.getPosition());
     view.listenKeyPress(controller.updatePlanePosition);
