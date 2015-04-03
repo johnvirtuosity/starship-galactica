@@ -1,6 +1,6 @@
 function Game(width,height){
  this.grid = new Grid(width,height);
- this.plane = new Plane(width, height);  //refactored this.grid.width => width
+ this.plane = new Plane(this.grid.width, this.grid.height);
  this.asteroids = [];
 };
 
@@ -60,6 +60,12 @@ Game.prototype.spawnAsteroids = function(){
   for(var i = 0; i < numberOfAsteroids ; i++){
     this.generateAsteroid();
   }
+};
+
+Game.prototype.destroyAsteroids = function(){
+    while(this.asteroids[0].col < 0){
+      this.asteroids.splice(0,1)
+    }
 };
 
 Game.prototype.getRandomNumber = function(min, max){
