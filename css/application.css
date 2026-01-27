@@ -71,7 +71,7 @@ background-size: cover;
 .plane {
    background: transparent;
    background-size: cover;
-   background-image: url("http://i.imgur.com/77lCzsz.png");
+   background-image: url("../img/spaceship.png");
 }
 
 .asteroid {
