@@ -30,6 +30,11 @@ GameView.prototype.listenKeyPress = function (callback){
 
 GameView.prototype.renderPlane = function (planeLocation) {
   planeLocation.toggleClass('plane');
+
+  if (!this.angle) this.angle = 0;
+  this.angle += 5;
+
+  planeLocation.css('transform', `rotate(${this.angle}deg)`);
 };
 
 GameView.prototype.renderAsteroids = function (asteroids) {

@@ -1,6 +1,7 @@
 function Plane(width, height){
   this.position_x = Math.floor(width/2);
   this.position_y = Math.floor(height/2);
+  this.angle = 0;
 };
 
 // Plane.prototype.setPlane = function(){
