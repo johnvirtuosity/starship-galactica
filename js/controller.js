@@ -6,6 +6,7 @@ GameController.prototype.updatePlanePosition = function(e){
   var keyCode = e.keyCode;
   var neighbors = game.plane.getNeighbors();
   var nextPosition = game.getNextPosition(keyCode, neighbors);
+  var currAngle = game.turnPlane(keyCode);
 
   view.renderPlane(game.plane.getPosition());
   console.log(game.checkCollision(nextPosition));

@@ -24,4 +24,20 @@ Plane.prototype.getNeighbors = function(){
   return neighbors ;
 };
 
+/**
+ * Set the angle of the plane
+ * @param {*} a 
+ */
+Plane.prototype.setAngle = function(a){
+  this.angle = a;
+}
+
+/**
+ * Give the angle the plane is at
+ * @returns Angle of the plane
+ */
+Plane.prototype.getAngle = function(){
+  return this.angle;
+}
+
 
