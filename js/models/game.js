@@ -29,6 +29,26 @@ Game.prototype.getNextPosition = function(keyCode, positions){
   return nextPosition;
 };
 
+/**
+ * Listener for checking when plane direction is changed
+ * @param {*} keyCode 
+ */
+Game.prototype.turnPlane  = function(keyCode){
+  var currAngle = game.plane.getAngle();
+  switch(keyCode) {
+    // e
+    case 101:
+      game.plane.setAngle(180);
+      console.log("Key pressed:", game.plane.getAngle());
+      break;
+    // r
+    case 114:
+      game.plane.setAngle(0);
+      console.log("Key pressed:", game.plane.getAngle());
+      break;
+  }
+}
+
 Game.prototype.outOfBounds = function(next_position){
   var x = next_position[0];
   var y = next_position[1];

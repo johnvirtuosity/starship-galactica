@@ -1,6 +1,7 @@
 function Plane(width, height){
   this.position_x = Math.floor(width/2);
   this.position_y = Math.floor(height/2);
+  this.angle = 0;
 };
 
 // Plane.prototype.setPlane = function(){
@@ -22,5 +23,21 @@ Plane.prototype.getNeighbors = function(){
   var neighbors = [[x + 1, y], [x - 1, y], [x, y - 1], [x, y + 1], [x,y]] ;
   return neighbors ;
 };
+
+/**
+ * Set the angle of the plane
+ * @param {*} a 
+ */
+Plane.prototype.setAngle = function(a){
+  this.angle = a;
+}
+
+/**
+ * Give the angle the plane is at
+ * @returns Angle of the plane
+ */
+Plane.prototype.getAngle = function(){
+  return this.angle;
+}
 
 
