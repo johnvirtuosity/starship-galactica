@@ -74,6 +74,11 @@ background-size: cover;
    background-image: url("../img/spaceship.png");
 }
 
+.explode {
+    background-size: cover;
+    background-image: url(../img/Ultimate_Explosion.gif);
+}
+
 .asteroid {
    background: transparent;
    background-size: cover;

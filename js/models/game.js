@@ -68,13 +68,15 @@ Game.prototype.checkCollision = function(nextPosition){
    }
 };
 
-
+/**
+ * Endgame sequence function (sound, board clear, game over + image)
+ */
 Game.prototype.endGame = function(){
   //clear the screen
   $(".audioDemo").trigger('play');
   $('body').empty();
   $('body').css({
-    'background-image': 'url(http://www.psdgraphics.com/file/explosion-in-space.jpg)'
+    'background-image': 'url(http://i.imgur.com/Zrp6hA6.jpg)'
   })
   $('body').append('<div id="explode">GAME OVER</div>');
 };
