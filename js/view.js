@@ -29,8 +29,16 @@ GameView.prototype.listenKeyPress = function (callback){
 };
 
 GameView.prototype.renderPlane = function (planeLocation) {
-  planeLocation.toggleClass('plane');
-  planeLocation.css('transform', `rotate(${game.plane.getAngle()}deg)`);
+  if (!game.gameOver) {
+    planeLocation.toggleClass('plane');
+    planeLocation.css('transform', `rotate(${game.plane.getAngle()}deg)`);
+  }
+};
+
+GameView.prototype.renderExplosion = function(plane) {
+    const el = plane.getPosition();
+    el.removeClass('plane');
+    el.addClass('explode');
 };
 
 GameView.prototype.renderAsteroids = function (asteroids) {
