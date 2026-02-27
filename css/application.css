@@ -77,10 +77,12 @@ background-size: cover;
 .explode {
     background-size: cover;
     background-image: url(../img/Ultimate_Explosion.gif);
+    z-index: 2; /* Make sure explosion is not overlapped by asteroid*/
 }
 
 .asteroid {
    background: transparent;
    background-size: cover;
-   background-image: url("http://icons.iconarchive.com/icons/zairaam/bumpy-planets/128/asteroid-icon.png");
+   background-image: url("../img/asteroid.png");
+   z-index: 1;  /* Make sure asteroid does not overlap explosion*/
 }
