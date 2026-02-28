@@ -23,19 +23,20 @@ GameController.prototype.updatePlanePosition = function(e){
 var game = new Game(20,40);
 
 GameController.prototype.animateAsteroids = function(){
+    if (!game.gameOver) {
+      game.setLevels();
 
-    game.setLevels();
+      for (var i = 0; i < game.asteroids.length; i++){
+        game.asteroids[i].updatePosition();
+      }
 
-    for (var i = 0; i < game.asteroids.length; i++){
-      game.asteroids[i].updatePosition();
+      game.destroyAsteroids();
+      game.spawnAsteroids(game.level); //you need to spwan a certain number of asteroids
+
+      view.renderAsteroids(game.asteroids);
+
+      setTimeout(controller.animateAsteroids, game.speed);
     }
-
-    game.destroyAsteroids();
-    game.spawnAsteroids(game.level); //you need to spwan a certain number of asteroids
-
-    view.renderAsteroids(game.asteroids);
-
-    setTimeout(controller.animateAsteroids, game.speed);
   };
 
 GameController.prototype.startGame = function(e){

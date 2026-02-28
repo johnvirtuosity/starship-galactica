@@ -6,6 +6,7 @@ function Game(width,height){
   this.level = 0;
   this.speed = 200;
   this.numberOfAsteroids = 2;
+  this.gameOver = false;
 };
 
 Game.prototype.getNextPosition = function(keyCode, positions){
@@ -68,15 +69,21 @@ Game.prototype.checkCollision = function(nextPosition){
    }
 };
 
-
+/**
+ * Endgame sequence function (sound, board clear, game over + image)
+ */
 Game.prototype.endGame = function(){
+  this.gameOver = true;
+  view.renderExplosion(this.plane);
   //clear the screen
-  $(".audioDemo").trigger('play');
-  $('body').empty();
-  $('body').css({
-    'background-image': 'url(http://www.psdgraphics.com/file/explosion-in-space.jpg)'
-  })
-  $('body').append('<div id="explode">GAME OVER</div>');
+  setTimeout(() =>{
+    $(".audioDemo").trigger('play');
+    $('body').empty();
+    $('body').css({
+      'background-image': 'url(http://i.imgur.com/Zrp6hA6.jpg)'
+    });
+    $('body').append('<div id="explode">GAME OVER</div>');
+  }, 1000);
 };
 
 Game.prototype.generateAsteroid = function(){
